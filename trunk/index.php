@@ -17,7 +17,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see http://www.gnu.org/licenses/.
     
-    version 0.2b 12/11/2010
+    version 0.2b 13/11/2010
 
 -->
 
@@ -28,7 +28,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<META NAME="keywords"    CONTENT="kanban, agile, dashboard, board, SCRUM, visual kanban, virtual kanban, lean, tablero, tablero kanban"> 
-	<META NAME="description" CONTENT="Virtual kanban is a free online tool for composing your own board online in order to get informed about and control your production proccess"> 
+	<META NAME="description" CONTENT="Virtual kanban is a free online tool, like a phisycal kanban board, for composing your own board online in order to get informed about and control your production proccess"> 
 	<script src="js/jquery.min.js" type="text/javascript"></script> 
 	<script src="js/jquery-ui.min.js" type="text/javascript"></script> 
 	<link rel="stylesheet" href="js/jquery-ui.css" type="text/css" media="all" /> 	
@@ -130,7 +130,9 @@
 
 <table width="99%">
 <tr>
-<td align="left" width="50%"><small>See <a name="top" href="http://blog.virtualkanban.net">the blog</a> for news & updates!</small></td><td align="right"><small>version 0.2b</small></td>
+<td align="left" width="50%"><small>See <a name="top" href="http://blog.virtualkanban.net">the blog</a> for news & updates!</small></td><td align="right">
+<small>version 0.2b</small>
+</td>
 </tr>
 </table>
 
@@ -176,13 +178,14 @@ The need to maintain a high rate of improvements led <i>Toyota</i> to devise the
 <p><small>
 	<p>* Improve graphics and visual style of the site</p>
 	<p>* Colored cards</p>
-	<p>* Persistence of the boards saving the data in a database</p>
+	<p>* <s>Persistence of the boards saving the data in a database</s> we're thinking about this</p>
 	<p>* Add WIP limits</p>
 </small></p>
 <br/><hr>
 </div>
 <p align="center" id="footer">
 <input type="button" id="txt_btn" value="show/hide text"/><br/>
+<small><a href="http://code.google.com/p/virtual-kanban/">Join the proyect, your are welcome!</small></a>
 <small>&copy; virtualkanban.net - leandro<script>document.write('@');</script>leandro<script>document.write('.');</script>org <i>me fecit</i></small> <br/>
 <iframe 
 src="http://www.facebook.com/plugins/like.php?href=http://virtualkanban.net&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80"
