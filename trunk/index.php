@@ -1,7 +1,7 @@
 <html>
 <!--
 
-    Copyright (C) 2010  Leandro Vázquez Cervantes (leandro-[at]-leandro-[dot]-org)
+    Copyright (C) 2010  Leandro Vázquez Cervantes (leandro[-at-]leandro[-dot-]org)
     Copyright (C) 2010  Octavio Benedí Sánchez (octaviobenedi[at]gmail[dot]com)
 
     This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,7 @@
 
 
 <head>
-	<title>Visual Kanban, an online resource to build and share your kanban boards</title>
+	<title>Virtual Kanban, an online resource to build and share your kanban boards</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<META NAME="keywords"    CONTENT="kanban, agile, dashboard, board, SCRUM, visual kanban, virtual kanban, lean, tablero, tablero kanban"> 
@@ -51,7 +51,7 @@
 		if (n > 7 ) n=7; 
 		$('#cabec').html('');
 		$('#cuerp').html('');
-		//$('td').remove();
+		
 		for (i=1; i<= n; i++){
 			str_head_col='<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);">'+ i +' <small><small style="cursor:pointer" n="'+ i +'" id="edit_head">E</small></small></th>';
 			str_col='<td style="border: medium solid rgb(136, 136, 136);"  align="center"><ul id="sortable'+ i +'" class="connectedSortable ui-sortable" style="min-height: 300px; min-width:135px;"><li style="visibility: hidden;"></li></ul></td>';
