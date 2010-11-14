@@ -6,15 +6,8 @@ function isNumber(n) {
 	}
 	
 	function draw_box(){
-	    id = $('.ui-state-default').size();
-		var str_li = '<li id="item'+ id +'" class="ui-state-default box_itm"> \
-		                <p class="box_itm_name">Item '+ id +'</p> \
-	                    <div id="progress'+ id +'" p="0" class="pbar"/> \
-                        <p class="box_itm_opt"> \
-                            <a n= '+ id +' href="#">Edit </a> \
-                            <span style="cursor:pointer" n= '+ id +'>Close</span> \
-                        </p> \
-                    </li>';
+	    	id = $('.ui-state-default').size();
+		var str_li = '<li id="item'+ id +'" class="ui-state-default box_itm"><p class="box_itm_name">Item '+ id +'</p><div id="progress'+ id +'" p="0" class="pbar"/><p class="box_itm_opt"><a n= '+ id +' href="#">Edit </a><span style="cursor:pointer" n= '+ id +'>Close</span></p></li>';
 		$("#sortable1").append(str_li).find("li:last").css({display:"none"}).fadeIn('slow');
 		$( "#progress"+id ).progressbar({
 			value: 0
@@ -22,16 +15,8 @@ function isNumber(n) {
 	}
 	
 	function draw_col(i){
-    	str_head_col='<th id="th_'+ i +'" class="col_prop_header"> \
-        	              ' + i +'  \
-    	                  <small style="cursor:pointer" n="'+ i +'" id="edit_head"> \
-    	                      E \
-                          </small> \
-                      </th>';
-		str_col='<td class="col_prop"> \
-		              <ul id="sortable'+ i +'" class="connectedSortable ui-sortable col_itm" > \
-                      </ul> \
-                  </td>';
+    		str_head_col='<th id="th_'+ i +'" class="col_prop_header">' + i +'<small style="cursor:pointer" n="'+ i +'" id="edit_head"> E </small></th>';
+		str_col='<td class="col_prop"><ul id="sortable'+ i +'" class="connectedSortable ui-sortable col_itm" ></ul></td>';
 		$('#cabec').append(str_head_col);
 		$('#cuerp').append(str_col);
 	}
@@ -61,7 +46,6 @@ function isNumber(n) {
 	}
 	
 	$(function() {
-		
 		
 		$('a').live('click', function() {
 		  var i = $(this).attr("n");
