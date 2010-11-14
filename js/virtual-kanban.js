@@ -1,3 +1,5 @@
+// version 0.2bb leandro 14/11/2010
+
 function isNumber(n) {
 	  return !isNaN(parseFloat(n)) && isFinite(n);
 	}
@@ -7,7 +9,7 @@ function isNumber(n) {
 	
 	function draw_box(){
 	    	id = $('.ui-state-default').size();
-		var str_li = '<li id="item'+ id +'" class="ui-state-default box_itm"><p class="box_itm_name">Item '+ id +'</p><div id="progress'+ id +'" p="0" class="pbar"/><p class="box_itm_opt"><a n= '+ id +' href="#">Edit </a><span style="cursor:pointer" n= '+ id +'>Close</span></p></li>';
+		var str_li = '<li id="item'+ id +'" class="ui-state-default box_itm"><p class="box_itm_name">Item '+ id +'</p><div id="progress'+ id +'" p="0" class="pbar"/><p class="box_itm_opt"><a n= '+ id +' href="#"><img src="img/edit2.png" height="16px" weight="16px"/> &nbsp;</a><span style="cursor:pointer" n= '+ id +'><img src="img/delete.png" height="16px" weight="16px"/>&nbsp;&nbsp;</span></p></li>';
 		$("#sortable1").append(str_li).find("li:last").css({display:"none"}).fadeIn('slow');
 		$( "#progress"+id ).progressbar({
 			value: 0
@@ -15,7 +17,7 @@ function isNumber(n) {
 	}
 	
 	function draw_col(i){
-    		str_head_col='<th id="th_'+ i +'" class="col_prop_header">' + i +'<small style="cursor:pointer" n="'+ i +'" id="edit_head"> E </small></th>';
+    		str_head_col='<th id="th_'+ i +'" class="col_prop_header">' + i +'<small style="cursor:pointer" n="'+ i +'" id="edit_head"> <img src="img/edit.png" height="16px" weight="16px"/> </small></th>';
 		str_col='<td class="col_prop"><ul id="sortable'+ i +'" class="connectedSortable ui-sortable col_itm" ></ul></td>';
 		$('#cabec').append(str_head_col);
 		$('#cuerp').append(str_col);
@@ -52,7 +54,7 @@ function isNumber(n) {
 		  var value = $('#item'+ i).text().replace( /Edit/, '' );
 		  var prog = $('#progress'+ i).attr("p");
 		  value = value.replace( /Close/, '' );
-		  $('#item'+i).html('<small>Name:</small><input style="width:120px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="box'+i+'" type="text" value="'+ value +'"/><br><small>Progress:</small><input style="width:120px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="prog'+i+'" type="text" value="'+ prog +'"/><div n="'+i+'" style="cursor:pointer"><small><small>Save</small></small></di>').width('120px');		  
+		  $('#item'+i).html('<small>Name:</small><input style="width:120px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="box'+i+'" type="text" value="'+ value +'"/><br><small>Progress:</small><input style="width:120px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="prog'+i+'" type="text" value="'+ prog +'"/><div n="'+i+'" style="cursor:pointer"><img src="img/import.png" height="16px" weight="16px"/><br/></div>').width('120px');		  
 		});
 		
 		
@@ -60,7 +62,7 @@ function isNumber(n) {
 		  var i = $(this).attr("n");
 		  var content = $('#box'+i).val(); 
 		  var prog = parseInt($('#prog'+i).val()); 
-		  $('#item'+i).replaceWith('<li id="item'+ i +'" class="ui-state-default"><p>'+content+'</p><div id="progress'+ i +'" p="'+prog+'" class="pbar"/><p align="right"><small><small><a n= '+ i +' href="#">Edit</a>&nbsp;<span style="cursor:pointer" n= '+ i +'>Close</span></small></small></p></li>').width('120px');
+		  $('#item'+i).replaceWith('<li id="item'+ i +'" class="ui-state-default"><p>'+content+'</p><div id="progress'+ i +'" p="'+prog+'" class="pbar"/><p align="right"><small><small><a n= '+ i +' href="#"><img src="img/edit2.png" height="16px" weight="16px"/> &nbsp;</a>&nbsp;<span style="cursor:pointer" n= '+ i +'><img src="img/delete.png" height="16px" weight="16px"/>&nbsp;&nbsp;</span></small></small></p></li>').width('120px');
 		  $( "#progress"+i ).progressbar({
 				value: prog
 		  });
@@ -68,12 +70,12 @@ function isNumber(n) {
 		
 		$('#edit_head').live('click', function() {
 		  var i = $(this).attr("n");
-		  $('#th_'+i).replaceWith('<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);"><input style="width:90px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="head_name'+i+'" type="text" />&nbsp;<small id="head_box" n='+i+'><small style="cursor:pointer">Save</small></small></th>');
+		  $('#th_'+i).replaceWith('<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);"><input style="width:90px;color:#150517;background:whitesmoke;border: 1px solid silver" id ="head_name'+i+'" type="text" />&nbsp;<small id="head_box" n='+i+'><small style="cursor:pointer"><img src="img/import.png" height="16px" weight="16px"/></small></small></th>');
 		});
 		
 		$('#head_box').live('click', function() {
 		  var i = $(this).attr("n");
-		  $('#th_'+i).replaceWith('<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);">'+ $('#head_name'+i).val() +' <small><small style="cursor:pointer" n="'+ i +'" id="edit_head">E</small></small></th>');
+		  $('#th_'+i).replaceWith('<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);">'+ $('#head_name'+i).val() +' <small><small style="cursor:pointer" n="'+ i +'" id="edit_head"><img src="img/edit.png" height="16px" weight="16px"/></small></small></th>');
 		});
 		
 		$('span').live('click', function() {

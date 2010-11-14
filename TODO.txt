@@ -3,6 +3,7 @@
  
  version 0.3
  
+ * darle un paddin (como cellspacing) que le de aire entre tarjetas, que cuando hay varias quedan muy juntas (Octavio)
  * eliminar el css de jquery y utilizar sólo el nuestro propio (Octavio)
  * columnas sin [li] (Octavio)
  * colorpicker para elegir color de las tarjetas (Leandro)
