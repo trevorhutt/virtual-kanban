@@ -1,0 +1,14 @@
+ ROADMAP
+ =======
+ 
+ version 0.3
+ 
+ * eliminar el css de jquery y utilizar sólo el nuestro propio (Octavio)
+ * columnas sin [li] (Octavio)
+ * colorpicker para elegir color de las tarjetas (Leandro)
+ * cambiar textos activos por iconos (Leandro)
+ 
+ versión 0.4
+ * mejora aspecto visual general
+ * cambiar progressbar por slidebar más vistoso
+ * WIP
