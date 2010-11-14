@@ -2,7 +2,7 @@
 <!--
 
     Copyright (C) 2010  Leandro Vázquez Cervantes (leandro[-at-]leandro[-dot-]org)
-    Copyright (C) 2010  Octavio Benedí Sánchez (octaviobenedi[at]gmail[dot]com)
+    Copyright (C) 2010  Octavio Benedí Sánchez (octaviobenedi[-at-]gmail[-dot-]com)
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
