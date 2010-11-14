@@ -22,17 +22,14 @@ function isNumber(n) {
 	}
 	
 	function draw_col(i){
-    	str_head_col='<th id="th_'+ i +'" style="background-color: white;border: medium solid rgb(136, 136, 136);"> \
+    	str_head_col='<th id="th_'+ i +'" class="col_prop_header"> \
         	              ' + i +'  \
-        	              <small> \
-        	                  <small style="cursor:pointer" n="'+ i +'" id="edit_head"> \
-        	                      E \
-	                          </small> \
+    	                  <small style="cursor:pointer" n="'+ i +'" id="edit_head"> \
+    	                      E \
                           </small> \
                       </th>';
-		str_col='<td style="border: medium solid rgb(136, 136, 136);"  align="center"> \
-		              <ul id="sortable'+ i +'" class="connectedSortable ui-sortable" style="min-height: 300px; min-width:135px;"> \
-	                      <li style="visibility: hidden;"></li> \
+		str_col='<td class="col_prop"> \
+		              <ul id="sortable'+ i +'" class="connectedSortable ui-sortable col_itm" > \
                       </ul> \
                   </td>';
 		$('#cabec').append(str_head_col);
@@ -48,16 +45,19 @@ function isNumber(n) {
 		
 		for (i=1; i<= n; i++){
 			draw_col(i);
-		}
-		
-		$( "#sortable1, #sortable2, #sortable3, #sortable4, #sortable5, #sortable6, #sortable7" ).sortable({
+		}		
+		initialize_sortables();
+	}
+	
+	function initialize_sortables(){
+    	$( ".col_itm" ).sortable({
 			connectWith: ".connectedSortable",
 			dropOnEmpty: true,
 			forcePlaceHolderSize: true,
 			cursor: 'crosshair',
  			helper: 'clone',
  			forceHelperSize: true
-		});
+		});	
 	}
 	
 	$(function() {
@@ -108,5 +108,7 @@ function isNumber(n) {
 			$('#texto').toggle('slow');
 		});
 		
-		draw_cols(3);
+		
+		draw_cols(3);	
+
 	});
