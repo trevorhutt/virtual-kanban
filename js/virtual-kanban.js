@@ -7,17 +7,12 @@ function isNumber(n) {
 	
 	function draw_box(){
 	    id = $('.ui-state-default').size();
-		var str_li = '<li id="item'+ id +'" width="120px" class="ui-state-default"> \
-		                <p>Item '+ id +'</p> \
+		var str_li = '<li id="item'+ id +'" class="ui-state-default box_itm"> \
+		                <p class="box_itm_name">Item '+ id +'</p> \
 	                    <div id="progress'+ id +'" p="0" class="pbar"/> \
-                        <p align="right"> \
-                            <small> \
-                                <small> \
-                                    <a n= '+ id +' href="#">Edit</a> \
-                                    &nbsp; \
-                                    <span style="cursor:pointer" n= '+ id +'>Close</span> \
-                                </small> \
-                            </small> \
+                        <p class="box_itm_opt"> \
+                            <a n= '+ id +' href="#">Edit </a> \
+                            <span style="cursor:pointer" n= '+ id +'>Close</span> \
                         </p> \
                     </li>';
 		$("#sortable1").append(str_li).find("li:last").css({display:"none"}).fadeIn('slow');
