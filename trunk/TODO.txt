@@ -8,6 +8,8 @@
  * columnas sin [li] (Octavio)
  * colorpicker para elegir color de las tarjetas (Leandro)
  * cambiar textos activos por iconos (Leandro)
+ * php -> html
+ * min-height en ficha cuando editando
  
  versión 0.4
  * mejora aspecto visual general
