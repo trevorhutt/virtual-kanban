@@ -1,0 +1,17 @@
+.background{background-color: white; cursor: auto;}
+#main_div{width:100%;text-align:center;margin:0 auto;}
+.table{margin:10px auto;min-width:600px;border: medium solid rgb(136, 136, 136);}
+.table th{width:240px;text-align:center;border: medium solid rgb(136, 136, 136);margin:2px;color:#555555}
+.header_input{margin:5px;}
+.table td{height:300px;width:240px;text-align:center;border: medium solid rgb(136, 136, 136);}
+.box_itm{margin:5px;padding:5px;color:#150517;background:whitesmoke;border: 1px solid silver;width: 210px;font-size: 0.9em;}
+.name{margin:5px;width:210px;}
+.pbar{height:10px !important;margin-bottom:5px;}	
+.small{font-size: 0.7em;}
+.option{cursor:pointer;float:right;margin-right:5px;margin:5px;}
+.click{cursor:pointer;}
+.fright{float:right;}
+.input{color:#150517;background:whitesmoke;border: 1px solid silver;}
+.clear{clear:both;}
+.rounded{border-radius: 5px;-moz-border-radius: 5px;}
+.WIP{font-size:0.7em;text-align:right;margin:5px;color:#888888;}
