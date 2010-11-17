@@ -4,14 +4,18 @@
 .table th{width:240px;text-align:center;border: medium solid rgb(136, 136, 136);margin:2px;color:#555555}
 .header_input{margin:5px;}
 .table td{height:300px;width:240px;text-align:center;border: medium solid rgb(136, 136, 136);}
-.box_itm{margin:5px;padding:5px;color:#150517;background:whitesmoke;border: 1px solid silver;width: 210px;font-size: 0.9em;}
+.box_itm{margin:1em 5px;padding:5px;color:#150517;background:whitesmoke url('../img/background.png');border: 1px solid silver;width: 210px;font-size: 0.9em;}
 .name{margin:5px;width:210px;}
 .pbar{height:10px !important;margin-bottom:5px;}	
-.small{font-size: 0.7em;}
-.option{cursor:pointer;float:right;margin-right:5px;margin:5px;}
+.small{font-size: 0.7em;height:25px;margin-right:5px;margin:5px;}
+.option{cursor:pointer;float:right;}
 .click{cursor:pointer;}
 .fright{float:right;}
-.input{color:#150517;background:whitesmoke;border: 1px solid silver;}
+.input{color:#150517;background:#DDDDDD;border: 1px solid silver;}
 .clear{clear:both;}
 .rounded{border-radius: 5px;-moz-border-radius: 5px;}
+.close{width:24px;height:24px;}
+.edit{width:24px;height:24px;margin-right: 3px;}
+.save_header{width:24px;height:24px;}
+.save{width:24px;height:24px;}
 .WIP{font-size:0.7em;text-align:right;margin:5px;color:#888888;}
