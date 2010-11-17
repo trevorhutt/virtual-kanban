@@ -25,7 +25,7 @@ $(document).ready(function() {
 			WIP<br/><input class="input header_input_name" value="'+wip+'" /> \
 		</div>  \
 		<div class="small"> \
-			<div class="option save_header">Guardar</div> \
+			<div class="option save_header"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
 		</div> \
 		<div class="clear"></div> \
 		';
@@ -54,8 +54,8 @@ $(document).ready(function() {
 				<div id="name'+id+'" class="name">'+id+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
-					<div n="'+id+'" class="option close">Cerrar</div> \
-					<div n="'+id+'" class="option edit">Editar</div> \
+					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
+					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				</div> \
 				<div class="clear"></div> \
 			</div>\
@@ -63,6 +63,14 @@ $(document).ready(function() {
 		$( "#progress_bar"+id ).progressbar({
 			value: 0
 		});
+		$('.itm_box_option').hide();
+	});
+	
+	$('.box_itm').live('mouseover',function(){
+		$(this).children().children('.itm_box_option').show();
+	});
+	$('.box_itm').live('mouseout',function(){
+		$('.itm_box_option').hide();
 	});
 	
 	$(".save").live('click', function(){
@@ -74,8 +82,8 @@ $(document).ready(function() {
 				<div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
-					<div n="'+id+'" class="option close">Cerrar</div> \
-					<div n="'+id+'" class="option edit">Editar</div> \
+					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
+					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				</div> \
 				<div class="clear"></div> \
 		';
@@ -92,7 +100,7 @@ $(document).ready(function() {
 				<div><span class="small">Nombre:</span><input id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
 				<div><span class="small">Progreso:</span><input id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
-					<div n="'+id+'" class="option save">Guardar</div> \
+					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
 				</div> \
 				<div class="clear"></div> \
 		';
@@ -111,6 +119,7 @@ function intialize_sortables(){
 	$( ".task_pool" ).sortable({
 			connectWith: ".task_pool",
 			delay:25,
+			revert:true,
 			dropOnEmpty: true,
 			forcePlaceHolderSize: true,
  			helper: 'clone',
@@ -123,10 +132,11 @@ function intialize_sortables(){
 					if((wip!=0)&&(itms>wip))
 					{
 						$(ui.sender).sortable('cancel');
-						alert("WIP exceded");
+						//alert("WIP exceded");
 					}
 				}
 	});
+	$('.itm_box_option').hide();
 };
 function find_next_box_itm_free(id){
 	if($('#box_itm'+id).length)
