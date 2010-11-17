@@ -40,9 +40,9 @@ $(document).ready(function() {
 		    wip=0; // Primera columna debe tener el wip ilimitado
 		}
 		if(wip>0){
-    		$(this).parent().parent().html('<div class="header_name">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: '+wip+'</div>');
+    		$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: '+wip+'</div>');
 		}else{
-        	$(this).parent().parent().html('<div class="header_name">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: Ilimitado</div>');
+        	$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: Ilimitado</div>');
     	}
 	});
 
