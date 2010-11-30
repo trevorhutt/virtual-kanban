@@ -19,10 +19,10 @@ $(document).ready(function() {
 		wip = check_number(wip);
 		var header_new_html=' \
 		<div class="header_input"> \
-			Nombre<br/><input class="input header_input_name" value="'+cur_name+'" /> \
+			Nombre<br/><input onkeypress="javascript:save_edit_h()" class="input header_input_name" value="'+cur_name+'" /> \
 		</div>  \
 		<div class="header_input"> \
-			WIP<br/><input class="input header_input_name" value="'+wip+'" /> \
+			WIP<br/><input onkeypress="javascript:save_edit_h()" class="input header_input_name" value="'+wip+'" /> \
 		</div>  \
 		<div class="small"> \
 			<div class="option save_header"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
@@ -42,16 +42,16 @@ $(document).ready(function() {
 		if(wip>0){
     		$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: '+wip+'</div>');
 		}else{
-        	$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: Ilimitado</div>');
+        	$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: Unlimited</div>');
     	}
 	});
 
 	/* Manipulación de tareas */
 	$('#add_task').click(function(){
-		var id=find_next_box_itm_free(0);
+		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
 			<div id="box_itm'+id+'"class="box_itm rounded"> \
-				<div id="name'+id+'" class="name">'+id+'</div> \
+				<div id="name'+id+'" class="name">Item '+id+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
 					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
@@ -74,7 +74,7 @@ $(document).ready(function() {
 	});
 	
 	$(".save").live('click', function(){
-		var id = $(this).attr("n");
+		var id = $(this).attr("n"); 
 		var box_itm_name=$('#name_input'+id).val();
 		var pbar_value=parseInt($('#progress_input'+id).val());
 		pbar_value = check_number(pbar_value);
@@ -97,8 +97,8 @@ $(document).ready(function() {
 		var box_itm_name=$('#name'+id).html();
 		var pbar_value=$('#progress_bar'+id).progressbar( "value" );
 		var box_itm_new_html=' \
-				<div><span class="small">Nombre:</span><input id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
-				<div><span class="small">Progreso:</span><input id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
+				<div><span class="small">Nombre:</span><input onkeypress="javascript:save_edit()" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
+				<div><span class="small">Progreso:</span><input onkeypress="javascript:save_edit()" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
 					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
 				</div> \
@@ -159,4 +159,22 @@ function check_number(number){
 		number=100;
 	}
 	return number;
+}
+
+function save_edit(){
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+		
+	if(code==13) { $(".save").click(); }
+}
+
+function save_edit_h(){
+	var code;
+	if (!e) var e = window.event;
+	if (e.keyCode) code = e.keyCode;
+	else if (e.which) code = e.which;
+		
+	if(code==13) { $(".save_header").click(); }
 }

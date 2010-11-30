@@ -7,7 +7,7 @@
 .box_itm{margin:1em 5px;padding:5px;color:#150517;background:whitesmoke url('../img/background.png');border: 1px solid silver;width: 210px;font-size: 0.9em;}
 .name{margin:5px;width:210px;}
 .pbar{height:10px !important;margin-bottom:5px;}	
-.small{font-size: 0.7em;height:25px;margin-right:5px;margin:5px;}
+.small{font-size: 0.7em;height:50px;margin-right:5px;margin:5px;}
 .option{cursor:pointer;float:right;}
 .click{cursor:pointer;}
 .fright{float:right;}
