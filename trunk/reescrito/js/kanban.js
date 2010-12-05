@@ -110,8 +110,12 @@ $(document).ready(function() {
 		var id = $(this).attr("n");		
 		$('#box_itm'+id).remove();
 	});
+	
+	$('#txt_btn').click(function(){
+			$('#texto').toggle('slow');
+	});
 
-    intialize_sortables();
+        intialize_sortables();
 });
 
 /* Funciones auxiliares */
