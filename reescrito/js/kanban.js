@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$('#add_col').click(function(){
 		var id=$(".task_pool").size();
 		$("#task_pool_header_container").append('<th class="task_pool_header"><div class="header_name click">'+id+'</div><div wip="0" class="WIP">WIP: Ilimitado</div></th>');
-		$("#task_pool_container").append('<td class="task_pool"></td>');
+		$("#task_pool_container").append('<td class="task_pool">&nbsp;</td>');
 		intialize_sortables();
 	});
 	$('#remove_col').click(function(){
@@ -19,10 +19,10 @@ $(document).ready(function() {
 		wip = check_number(wip);
 		var header_new_html=' \
 		<div class="header_input"> \
-			Nombre<br/><input onkeypress="javascript:save_edit_h()" class="input header_input_name" value="'+cur_name+'" /> \
+			Nombre<br/><input onkeypress="javascript:save_edit_h(event)" class="input header_input_name" value="'+cur_name+'" /> \
 		</div>  \
 		<div class="header_input"> \
-			WIP<br/><input onkeypress="javascript:save_edit_h()" class="input header_input_name" value="'+wip+'" /> \
+			WIP<br/><input onkeypress="javascript:save_edit_h(event)" class="input header_input_name" value="'+wip+'" /> \
 		</div>  \
 		<div class="small"> \
 			<div class="option save_header"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
@@ -97,8 +97,8 @@ $(document).ready(function() {
 		var box_itm_name=$('#name'+id).html();
 		var pbar_value=$('#progress_bar'+id).progressbar( "value" );
 		var box_itm_new_html=' \
-				<div><span class="small">Nombre:</span><input onkeypress="javascript:save_edit()" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
-				<div><span class="small">Progreso:</span><input onkeypress="javascript:save_edit()" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
+				<div><span class="small">Nombre:</span><input onkeypress="javascript:save_edit(event)" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
+				<div><span class="small">Progreso:</span><input onkeypress="javascript:save_edit(event)" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
 					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
 				</div> \
@@ -125,9 +125,9 @@ function intialize_sortables(){
  			helper: 'clone',
  			forceHelperSize: true,
 			receive: function(event, ui) {
-					var itms=$(this).children(".box_itm").length;
+					var itms= $(this).children(".box_itm").length;
 					var index=$(this).index();
-					var wip=$(this).parent().parent().children("tr th:eq("+index+")").children("div:eq(1)").first().attr("wip");
+					var wip=  $(this).parent().parent().children("tr th:eq("+index+")").children("div:eq(1)").first().attr("wip");
 					wip = check_number(wip);
 					if((wip!=0)&&(itms>wip))
 					{
@@ -135,7 +135,7 @@ function intialize_sortables(){
 						//alert("WIP exceded");
 					}
 				}
-	});
+	}).html('&nbsp;');
 	$('.itm_box_option').hide();
 };
 function find_next_box_itm_free(id){
@@ -161,7 +161,7 @@ function check_number(number){
 	return number;
 }
 
-function save_edit(){
+function save_edit(e){
 	var code;
 	if (!e) var e = window.event;
 	if (e.keyCode) code = e.keyCode;
@@ -170,7 +170,7 @@ function save_edit(){
 	if(code==13) { $(".save").click(); }
 }
 
-function save_edit_h(){
+function save_edit_h(e){
 	var code;
 	if (!e) var e = window.event;
 	if (e.keyCode) code = e.keyCode;
