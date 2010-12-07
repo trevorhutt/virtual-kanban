@@ -4,13 +4,15 @@ $(document).ready(function() {
 	$('#add_col').click(function(){
 		var id=$(".task_pool").size();
 		$("#task_pool_header_container").append('<th class="task_pool_header"><div class="header_name click">'+id+'</div><div wip="0" class="WIP">WIP: Ilimitado</div></th>');
-		$("#task_pool_container").append('<td class="task_pool">&nbsp;</td>');
+		$("#task_pool_container").append('<td class="task_pool"><div /></td>');
 		intialize_sortables();
 	});
-	$('#remove_col').click(function(){
-		$(".task_pool_header").last().remove();
-		$(".task_pool").last().remove();
-		intialize_sortables();
+	$('#remove_col').click(function(){	   
+	   if($(".task_pool_header").size()>1){
+	    	$(".task_pool_header").last().remove();
+    		$(".task_pool").last().remove();
+		    intialize_sortables();
+		}
 	});	
 
 	$('.header_name').live('click',function(){
@@ -139,7 +141,7 @@ function intialize_sortables(){
 						//alert("WIP exceded");
 					}
 				}
-	}).html('&nbsp;');
+	});
 	$('.itm_box_option').hide();
 };
 function find_next_box_itm_free(id){
