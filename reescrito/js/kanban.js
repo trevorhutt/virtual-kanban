@@ -54,6 +54,7 @@ $(document).ready(function() {
 		$(".task_pool").first().append(' \
 			<div id="box_itm'+id+'"class="box_itm rounded"> \
 				<div id="name'+id+'" class="name">Item '+id+'</div> \
+				<div id="resp'+id+'" class="name">Resp '+id+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
 					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
@@ -67,7 +68,7 @@ $(document).ready(function() {
 		});
 		$('.itm_box_option').hide();
 	});
-	
+
 	$('.box_itm').live('mouseover',function(){
 		$(this).children().children('.itm_box_option').show();
 	});
@@ -75,13 +76,16 @@ $(document).ready(function() {
 		$('.itm_box_option').hide();
 	});
 	
+	
 	$(".save").live('click', function(){
 		var id = $(this).attr("n"); 
 		var box_itm_name=$('#name_input'+id).val();
+		var box_itm_resp=$('#resp_input'+id).val();
 		var pbar_value=parseInt($('#progress_input'+id).val());
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
 				<div id="name'+id+'" class="name">'+box_itm_name+'</div> \
+				<div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
 					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
@@ -97,9 +101,12 @@ $(document).ready(function() {
 	$('.edit').live('click', function() {
 		var id = $(this).attr("n");
 		var box_itm_name=$('#name'+id).html();
-		var pbar_value=$('#progress_bar'+id).progressbar( "value" );
+		var box_itm_resp=$('#resp'+id).html();
+		var pbar_value=parseInt($('#progress_bar'+id).progressbar( "value" ));
+		if (isNaN(pbar_value)){ var pbar_value=0;}
 		var box_itm_new_html=' \
 				<div><span class="small">Nombre:</span><input onkeypress="javascript:save_edit(event)" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
+				<div><span class="small">Resp:</span><input onkeypress="javascript:save_edit(event)" id="resp_input'+id+'" class="input" value="'+box_itm_resp+'" /></div>  \
 				<div><span class="small">Progreso:</span><input onkeypress="javascript:save_edit(event)" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
 					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
@@ -108,6 +115,7 @@ $(document).ready(function() {
 		';
 		$('#box_itm'+id).html(box_itm_new_html);
 	});
+	
 	$('.close').live('click', function() {
 		var id = $(this).attr("n");		
 		$('#box_itm'+id).remove();
