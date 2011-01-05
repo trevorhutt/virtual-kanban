@@ -3,14 +3,20 @@ $(document).ready(function() {
 	
 	$('#add_col').click(function(){
 		var id=$(".task_pool").size();
+		$(".task_pool_header:last").addClass("dotted_separator");
+		$(".task_pool:last").addClass("dotted_separator");
+		
 		$("#task_pool_header_container").append('<th class="task_pool_header"><div class="header_name click">'+id+'</div><div wip="0" class="WIP">WIP: Ilimitado</div></th>');
 		$("#task_pool_container").append('<td class="task_pool"><div /></td>');
 		intialize_sortables();
 	});
 	$('#remove_col').click(function(){	   
 	   if($(".task_pool_header").size()>1){
-	    	$(".task_pool_header").last().remove();
+	    	$(".task_pool_header").last().remove();			
     		$(".task_pool").last().remove();
+    		
+    		$(".task_pool_header:last").removeClass("dotted_separator");
+			$(".task_pool:last").removeClass("dotted_separator");
 		    intialize_sortables();
 		}
 	});	
