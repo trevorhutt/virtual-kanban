@@ -22,7 +22,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see http://www.gnu.org/licenses/.
 
-version 0.2f Verónica mar 04 ene 2011 01:27:28 CET 
+version 0.22 Leandro mar 04 ene 2011 01:27:28 CET 
 
 -->
 
@@ -33,22 +33,34 @@ version 0.2f Verónica mar 04 ene 2011 01:27:28 CET
     <META NAME="description" CONTENT="Virtual kanban is a free online tool, like a phisycal kanban board, for composing your own board online in order to get informed about and control your production proccess">
     <SCRIPT SRC="./js/jquery.js" TYPE="text/javascript">
 </SCRIPT>
+    <SCRIPT TYPE="text/javascript" SRC="./js/home.js">
+</SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="./js/kanban.js">
 </SCRIPT>
     <SCRIPT SRC="./js/jquery-ui.js" TYPE="text/javascript">
 </SCRIPT>
     <LINK REL="stylesheet" HREF="./css/kanban.css" TYPE="text/css" MEDIA="all">
     <LINK REL="stylesheet" HREF="./css/jquery-ui.css" TYPE="text/css" MEDIA="all">
+    <LINK REL="stylesheet" HREF="./css/home.css" TYPE="text/css" MEDIA="all">
 </HEAD>
 <body class="background">
 
 <TABLE WIDTH="99%">
         <TR>
-            <TD ALIGN="left" WIDTH="50%"><SMALL>See <A NAME="top" HREF="http://blog.virtualkanban.net" ID="top">the blog</A> for news &amp; updates!</SMALL></TD>
+            <TD WIDTH="50%"></TD>
 
-            <TD ALIGN="right"><p><SMALL>version 0.2f</SMALL><p><a href="./02b/"><SMALL>old version</a></SMALL></TD>
+            <TD>
+              <div id="galleta">  
+                  <p style="line-height:.1em;">
+                    <SMALL>See <A NAME="top" HREF="http://blog.virtualkanban.net" ID="top">the blog</A> for news!</SMALL>  
+                  </p>     
+                  <p style="line-height:.1em;">
+                    <SMALL>ver. 0.22</SMALL></p><p style="line-height:.1em;"><a href="./02b/"><SMALL>old version</a></SMALL>
+                  </p> 
+              </div>
+            </TD>
         </TR>
-    </TABLE>
+</TABLE>
    
    
      <TABLE ALIGN="center" ID="cabecera">
