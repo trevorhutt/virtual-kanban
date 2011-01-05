@@ -16,7 +16,7 @@ $(document).ready(function() {
 	});	
 
 	$('.header_name').live('click',function(){
-		var cur_name=$(this).html();
+		var cur_name=$(this).children("span").html();
 		var wip = $(this).parent().children("div:eq(1)").attr("wip");
 		wip = check_number(wip);
 		var header_new_html=' \
@@ -42,9 +42,9 @@ $(document).ready(function() {
 		    wip=0; // Primera columna debe tener el wip ilimitado
 		}
 		if(wip>0){
-    		$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: '+wip+'</div>');
+    		$(this).parent().parent().html('<div class="header_name click"><img class="title_bullet" src="img/mookup/bullet.png" /><span class="title_text">'+new_name+'</span></div><div wip="'+wip+'" class="WIP">WIP: '+wip+'</div>');
 		}else{
-        	$(this).parent().parent().html('<div class="header_name click">'+new_name+'</div><div wip="'+wip+'" class="WIP">WIP: Unlimited</div>');
+        	$(this).parent().parent().html('<div class="header_name click"><img class="title_bullet" src="img/mookup/bullet.png" /><span class="title_text">'+new_name+'</span></div><div wip="'+wip+'" class="WIP">WIP: Unlimited</div>');
     	}
 	});
 
@@ -54,6 +54,7 @@ $(document).ready(function() {
 		$(".task_pool").first().append(' \
 			<div id="box_itm'+id+'"class="box_itm rounded"> \
 				<div id="name'+id+'" class="name">Item '+id+'</div> \
+				<div class="dotted_hr"></div> \
 				<div id="resp'+id+'" class="name">Resp '+id+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
@@ -85,6 +86,7 @@ $(document).ready(function() {
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
 				<div id="name'+id+'" class="name">'+box_itm_name+'</div> \
+				<div class="dotted_hr"></div> \
 				<div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \

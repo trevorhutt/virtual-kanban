@@ -72,28 +72,26 @@ version 0.22 Leandro mar 04 ene 2011 01:27:28 CET
 
         <TR>
             <TD>
-                <H1><IMG SRC="img/logo.png" BORDER="0" ALT="Virtual Kanban"></H1>
+                <H1><IMG SRC="img/mookup/title.png" BORDER="0" ALT="Virtual Kanban"></H1>
             </TD>
-
-            <TD VALIGN="top"><IMG SRC="img/beta.png" BORDER="0" ALT="beta"></TD>
         </TR>
     </TABLE>
     
 	<div id="main_div">
 		<div>
-			<button id="add_task">New task</button>
-			<button id="add_col">New column</button>
-			<button id="remove_col">Delete column</button>
+			<button id="add_task"></button>
+			<button id="add_col"></button>
+			<button id="remove_col"></button>
 		</div>
 		<table class="table rounded" border=1>
 			<tr id="task_pool_header_container">
-				<th class="task_pool_header"><div class="header_name click">Backlog</div><div wip="0" class="WIP">WIP: Unlimited</div></th>
-				<th class="task_pool_header"><div class="header_name click">In Process</div><div wip="0" class="WIP">WIP: Unlimited</div></th>
-				<th class="task_pool_header"><div class="header_name click">Finished</div><div wip="0" class="WIP">WIP: Unlimited</div></th>
+				<th class="task_pool_header  dotted_separator"><div class="header_name click"><img class="title_bullet" src="img/mookup/bullet.png" /><span class="title_text">Backlog</span></div><div wip="0" class="WIP">WIP: Unlimited</div></th>
+				<th class="task_pool_header  dotted_separator"><div class="header_name click"><img class="title_bullet" src="img/mookup/bullet.png" /><span class="title_text">In Process</span></div><div wip="0" class="WIP">WIP: Unlimited</div></th>
+				<th class="task_pool_header"><div class="header_name click"><img class="title_bullet" src="img/mookup/bullet.png" /><span class="title_text">Finished</span></div><div wip="0" class="WIP">WIP: Unlimited</div></th>
 			</tr>
 			<tr id="task_pool_container">
-				<td class="task_pool"><div/></td>
-				<td class="task_pool"><div /></td>
+				<td class="task_pool dotted_separator"><div/></td>
+				<td class="task_pool dotted_separator"><div /></td>
 				<td class="task_pool"><div /></td>
 			</tr>
 		</table>
