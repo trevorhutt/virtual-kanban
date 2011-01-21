@@ -58,12 +58,14 @@ $(document).ready(function() {
 	$('#add_task').click(function(){
 		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
+		  <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
 			<div id="box_itm'+id+'"class="box_itm rounded"> \
 				<div id="name'+id+'" class="name">Item '+id+'</div> \
 				<div class="dotted_hr"></div> \
 				<div id="resp'+id+'" class="name">Resp '+id+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
+					<div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
 					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
 					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				</div> \
@@ -83,6 +85,10 @@ $(document).ready(function() {
 		$('.itm_box_option').hide();
 	});
 	
+	$('.colorete').live('colorpicked', function () {
+    $('#box_itm'+$(this).attr('n')).css('background',$(this).val());
+	});
+	
 	
 	$(".save").live('click', function(){
 		var id = $(this).attr("n"); 
@@ -91,11 +97,13 @@ $(document).ready(function() {
 		var pbar_value=parseInt($('#progress_input'+id).val());
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
+		    <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
 				<div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				<div class="dotted_hr"></div> \
 				<div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
 				<div id="progress_bar'+id+'" class="pbar"></div> \
 				<div class="small"> \
+				  <div n="'+id+'" class="itm_box_option"><input n="'+id+'" class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
 					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
 					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				</div> \
@@ -113,9 +121,9 @@ $(document).ready(function() {
 		var pbar_value=parseInt($('#progress_bar'+id).progressbar( "value" ));
 		if (isNaN(pbar_value)){ var pbar_value=0;}
 		var box_itm_new_html=' \
-				<div><span class="small">Nombre:</span><input onkeypress="javascript:save_edit(event)" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
-				<div><span class="small">Resp:</span><input onkeypress="javascript:save_edit(event)" id="resp_input'+id+'" class="input" value="'+box_itm_resp+'" /></div>  \
-				<div><span class="small">Progreso:</span><input onkeypress="javascript:save_edit(event)" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
+				<div><span class="small">Name of the task:</span><input onkeypress="javascript:save_edit(event)" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
+				<div><span class="small">Responsible:</span><input onkeypress="javascript:save_edit(event)" id="resp_input'+id+'" class="input" value="'+box_itm_resp+'" /></div>  \
+				<div><span class="small">Progress:</span><input onkeypress="javascript:save_edit(event)" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
 					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
 				</div> \

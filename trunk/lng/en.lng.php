@@ -3,7 +3,7 @@ define ('TITLE','One-File-HTML Kanban boards online and offline!');
 
 #galleta
 define ('BLOG',        'See <a href="http://blog.virtualkanban.net/">the blog</a> for news');
-define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.22');
+define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3b');
 define ('VERSION_LINK','<a href="/02b/">old version</A>');
 
 #buttons
@@ -22,7 +22,7 @@ define ('UNLIMITED',  'Unlimited');
 
 #footer
 define ('JOIN',   '<a href="http://code.google.com/p/virtual-kanban/">Join the proyect, your are welcome!</A>');
-define ('COPY',   '&copy; virtualkanban.net - leandro<script><document.write("@");</script>leandro<script><document.write(".");</script>org <cite>me fecit</cite>');
+define ('COPY',   '© virtualkanban.net - leandro@leandro.org me fecit');
 
 
 

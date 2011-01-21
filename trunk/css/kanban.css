@@ -20,6 +20,7 @@
 .input{color:#150517;background:#DDDDDD;border: 1px solid silver;}
 .clear{clear:both;}
 .rounded{border-radius: 5px;-moz-border-radius: 5px;}
+.colorete{width:21px;height:21px;float:right}
 .close{width:24px;height:24px;}
 .edit{width:24px;height:24px;margin-right: 3px;}
 .save_header{width:24px;height:24px;}
