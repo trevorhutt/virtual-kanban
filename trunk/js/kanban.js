@@ -59,19 +59,21 @@ $(document).ready(function() {
 		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
 		  <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-			<div id="box_itm'+id+'"class="box_itm rounded"> \
-				<div id="name'+id+'" class="name">Item '+id+'</div> \
-				<div class="dotted_hr"></div> \
-				<div id="resp'+id+'" class="name">Resp '+id+'</div> \
-				<div id="progress_bar'+id+'" class="pbar"></div> \
-				<div class="small"> \
-					<div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
-					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
-					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
-				</div> \
-				<div class="clear"></div> \
-			</div>\
-			<div id="box_itm'+id+'_shadow" class="shadow" /> \
+		  <div id="container"> \
+			  <div id="box_itm'+id+'"class="box_itm rounded"> \
+				  <div id="name'+id+'" class="name">Item '+id+'</div> \
+				  <div class="dotted_hr"></div> \
+				  <div id="resp'+id+'" class="name">Resp '+id+'</div> \
+				  <div id="progress_bar'+id+'" class="pbar"></div> \
+				  <div class="small"> \
+					  <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
+					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
+					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
+				  </div> \
+				  <div class="clear"></div> \
+			  </div> \
+			  <div id="box_itm'+id+'_shadow" class="shadow" /> \
+			<div> \
 		');
 		$( "#progress_bar"+id ).progressbar({
 			value: 0
@@ -99,16 +101,18 @@ $(document).ready(function() {
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
 		    <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-				<div id="name'+id+'" class="name">'+box_itm_name+'</div> \
-				<div class="dotted_hr"></div> \
-				<div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
-				<div id="progress_bar'+id+'" class="pbar"></div> \
-				<div class="small"> \
-				  <div n="'+id+'" class="itm_box_option"><input n="'+id+'" class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
-					<div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
-					<div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
-				</div> \
-				<div class="clear"></div> \
+		    <div id="container"> \
+				  <div id="name'+id+'" class="name">'+box_itm_name+'</div> \
+				  <div class="dotted_hr"></div> \
+				  <div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
+				  <div id="progress_bar'+id+'" class="pbar"></div> \
+				  <div class="small"> \
+				    <div n="'+id+'" class="itm_box_option"><input n="'+id+'" class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
+					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
+					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
+				  </div> \
+				  <div class="clear"></div> \
+				<div> \
 		';
 		$('#box_itm'+id).html(box_itm_new_html);
 		$( "#progress_bar"+id ).progressbar({
