@@ -136,6 +136,7 @@ $(document).ready(function() {
 	$('.close').live('click', function() {
 		var id = $(this).attr("n");		
 		$('#box_itm'+id).remove();
+		$('#box_itm'+id+'_shadow').remove();
 	});
 	
 	$('#txt_btn').click(function(){
