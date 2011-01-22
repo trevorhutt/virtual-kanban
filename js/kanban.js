@@ -71,6 +71,7 @@ $(document).ready(function() {
 				</div> \
 				<div class="clear"></div> \
 			</div>\
+			<div id="box_itm'+id+'_shadow" class="shadow" /> \
 		');
 		$( "#progress_bar"+id ).progressbar({
 			value: 0
