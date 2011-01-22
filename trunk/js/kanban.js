@@ -59,7 +59,7 @@ $(document).ready(function() {
 		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
 		  <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-		  <div id="container"> \
+		  <div id="big_container"> \
 			  <div id="box_itm'+id+'"class="box_itm rounded"> \
 				  <div id="name'+id+'" class="name">Item '+id+'</div> \
 				  <div class="dotted_hr"></div> \
@@ -101,7 +101,7 @@ $(document).ready(function() {
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
 		    <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-		    <div id="container"> \
+		    <div id="big_container"> \
 				  <div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				  <div class="dotted_hr"></div> \
 				  <div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
@@ -118,7 +118,20 @@ $(document).ready(function() {
 		$( "#progress_bar"+id ).progressbar({
 			value: pbar_value
 		});
+		
+		$('#box_itm'+id).live('mouseover',function(){
+		  $(this).children().children().children('.itm_box_option').show();
+	  });
+	  $('#box_itm'+id).live('mouseout',function(){
+		  $('.itm_box_option').hide();
+	  });
+	
+	  $('.colorete').live('colorpicked', function () {
+      $('#box_itm'+$(this).attr('n')).css('background',$(this).val());
+	  });
 	});
+	
+	
 	$('.edit').live('click', function() {
 		var id = $(this).attr("n");
 		var box_itm_name=$('#name'+id).html();
