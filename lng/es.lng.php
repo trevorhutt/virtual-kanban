@@ -4,12 +4,12 @@ define ('TITLE','Tableros Kanban online y off-line en un solo fichero HTML!');
 #galleta
 define ('BLOG',        'Ver <a href="http://blog.virtualkanban.net/">el blog</a> para novedades');
 define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3b');
-define ('VERSION_LINK','<a href="/02b/">versión antigua</A>');
+define ('VERSION_LINK','<a href="/022/">versión antigua</A>');
 
 #buttons
-define ('NEW_TASK',     'Tarjeta Nueva');
-define ('NEW_COLUMN',   'Columna Nueva');
-define ('DELETE_COLUMN','Borrar Columna');
+define ('BTN_ADD_TASK',  'NUEVA TARJETA');
+define ('BTN_ADD_COL',   'COLUMNA NUEVA');
+define ('BTN_DEL_COL',   'BORRAR COLUMNA');
 
 
 #columns headers
@@ -27,7 +27,7 @@ define ('COPY',   '© virtualkanban.net - leandro@leandro.org me fecit');
 
 
 #button & what is text
-define ('BUTTON_TEXT',     'Mostrar / Ocultar texto');
+define ('BUTTON_TEXT',     'Mostrar/Ocultar texto');
 define ('WHAT_IS_TEXT',    '
                             <BR> 
                             <HR> 

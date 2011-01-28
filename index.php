@@ -12,9 +12,9 @@ $obj->BLOG    = BLOG;
 $obj->VERSION = VERSION;
 $obj->VERSION_LINK   = VERSION_LINK;
 
-$obj->NEW_TASK       = NEW_TASK;
-$obj->NEW_COLUMN     = NEW_COLUMN;
-$obj->DELETE_COLUMN  = DELETE_COLUMN;
+$obj->BTN_ADD_TASK = BTN_ADD_TASK;
+$obj->BTN_ADD_COL  = BTN_ADD_COL;
+$obj->BTN_DEL_COL  = BTN_DEL_COL;
 
 
 $obj->COLUMN_1    = COLUMN_1;
