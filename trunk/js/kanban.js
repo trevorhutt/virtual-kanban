@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  
 	/* Manipulación de columnas */
 	
 	$('#add_col').click(function(){
@@ -59,7 +60,7 @@ $(document).ready(function() {
 		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
 		  <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-		  <div id="big_container"> \
+		  <div class="big_container"> \
 			  <div id="box_itm'+id+'"class="box_itm rounded"> \
 				  <div id="name'+id+'" class="name">Item '+id+'</div> \
 				  <div class="dotted_hr"></div> \
@@ -75,6 +76,7 @@ $(document).ready(function() {
 			  <div id="box_itm'+id+'_shadow" class="shadow" /> \
 			<div> \
 		');
+    
 		$( "#progress_bar"+id ).progressbar({
 			value: 0
 		});
@@ -101,7 +103,7 @@ $(document).ready(function() {
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
 		    <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
-		    <div id="big_container"> \
+		    <div class="big_container"> \
 				  <div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				  <div class="dotted_hr"></div> \
 				  <div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
@@ -174,7 +176,7 @@ function intialize_sortables(){
  			helper: 'clone',
  			forceHelperSize: true,
 			receive: function(event, ui) {
-					var itms= $(this).children(".box_itm").length;
+					var itms= $(this).children(".big_container").length;
 					var index=$(this).index();
 					var wip=  $(this).parent().parent().children("tr th:eq("+index+")").children("div:eq(1)").first().attr("wip");
 					wip = check_number(wip);
