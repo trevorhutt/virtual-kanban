@@ -59,7 +59,6 @@ $(document).ready(function() {
 	$('#add_task').click(function(){
 		var id=find_next_box_itm_free(1);
 		$(".task_pool").first().append(' \
-		  <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
 		  <div class="big_container"> \
 			  <div id="box_itm'+id+'"class="box_itm rounded"> \
 				  <div id="name'+id+'" class="name">Item '+id+'</div> \
@@ -67,7 +66,7 @@ $(document).ready(function() {
 				  <div id="resp'+id+'" class="name">Resp '+id+'</div> \
 				  <div id="progress_bar'+id+'" class="pbar"></div> \
 				  <div class="small"> \
-					  <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
+					  <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
 					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
 					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				  </div> \
@@ -76,6 +75,8 @@ $(document).ready(function() {
 			  <div id="box_itm'+id+'_shadow" class="shadow" /> \
 			<div> \
 		');
+		
+		$( "#box_itm"+id+" .itm_box_option input" ).mColorPicker();
     
 		$( "#progress_bar"+id ).progressbar({
 			value: 0
@@ -127,10 +128,11 @@ $(document).ready(function() {
 	  $('#box_itm'+id).live('mouseout',function(){
 		  $('.itm_box_option').hide();
 	  });
-	
+	  
 	  $('.colorete').live('colorpicked', function () {
       $('#box_itm'+$(this).attr('n')).css('background',$(this).val());
 	  });
+	  
 	});
 	
 	
