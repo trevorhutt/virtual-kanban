@@ -103,14 +103,13 @@ $(document).ready(function() {
 		var pbar_value=parseInt($('#progress_input'+id).val());
 		pbar_value = check_number(pbar_value);
 		var box_itm_new_html=' \
-		    <script type="text/javascript" src="js/mColorPicker_min.js" charset="UTF-8"></script> \
 		    <div class="big_container"> \
 				  <div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				  <div class="dotted_hr"></div> \
 				  <div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
 				  <div id="progress_bar'+id+'" class="pbar"></div> \
 				  <div class="small"> \
-				    <div n="'+id+'" class="itm_box_option"><input n="'+id+'" class="color colorete" type="color"  data-text="hidden" value="#f7941d"></div> \
+				    <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
 					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
 					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
 				  </div> \
@@ -118,6 +117,7 @@ $(document).ready(function() {
 				<div> \
 		';
 		$('#box_itm'+id).html(box_itm_new_html);
+		$( "#box_itm"+id+" .itm_box_option input" ).mColorPicker();
 		$( "#progress_bar"+id ).progressbar({
 			value: pbar_value
 		});
