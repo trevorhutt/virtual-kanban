@@ -20,7 +20,7 @@ Copyright (C) 2010  Verónica Pazos (verocorella[-at-]gmail[-dot-]com)
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET  
+version 0.3d Leandro dom 16 sep 2012 01:27:28 CET  
 ==
 // jquery cdn
 
@@ -44,6 +44,8 @@ version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET
     <LINK REL="stylesheet" HREF="./css/kanban.css" TYPE="text/css" MEDIA="all">
     <LINK REL="stylesheet" HREF="./css/jquery-ui.css" TYPE="text/css" MEDIA="all">
     <LINK REL="stylesheet" HREF="./css/home.css" TYPE="text/css" MEDIA="all">
+    <LINK REL="stylesheet" HREF="./css/bootstrap.min.css" TYPE="text/css" MEDIA="all">
+    <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="./img/VirtualKanban.ico">
 </HEAD>
 <body class="background">
@@ -53,7 +55,8 @@ version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET
             <TD WIDTH="50%"></TD>
 
             <TD>
-              <div id="galleta">  
+              <div id="galleta"> 
+                  <p>&nbsp;</p> 
                   <p style="line-height:.1em;">
                     <small> {{{BLOG}}} </small>
                   </p>     
@@ -61,7 +64,7 @@ version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET
                     <small> {{{VERSION}}} </small>
                   </p> 
                   <p style="line-height:.1em;">
-                    <small> {{{VERSION_LINK}}} {{{OTHER_TOOLS_LINK}}}</small>
+                    <small> <small>{{{VERSION_LINK}}} {{{OTHER_TOOLS_LINK}}}</small> </small>
                   </p> 
               </div>
             </TD>
@@ -85,9 +88,9 @@ version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET
     
 	<div id="main_div">
 		<div>
-			<input id="add_task" type="button"   value="{{BTN_ADD_TASK}}"/>
-			<input id="add_col" type="button"    value="{{BTN_ADD_COL}}"></button>
-			<input id="remove_col" type="button" value="{{BTN_DEL_COL}}"></button>
+			<input id="add_task" type="button"   value="{{BTN_ADD_TASK}}" class="btn btn-info"/>
+			<input id="add_col" type="button"    value="{{BTN_ADD_COL}}"  class="btn btn-primary"></button>
+			<input id="remove_col" type="button" value="{{BTN_DEL_COL}}"  class="btn btn-danger" ></button>
 		</div>
 		<table class="table rounded" border=1>
 			<tr id="task_pool_header_container">
@@ -107,7 +110,7 @@ version 0.3c1 Leandro mar 7 may 2011 01:27:28 CET
         {{{WHAT_IS_TEXT}}}
     </DIV>
 
-    <P ALIGN="center" ID="footer"><INPUT TYPE="button" ID="txt_btn" VALUE="{{{BUTTON_TEXT}}}"><BR>
+    <P ALIGN="center" ID="footer"><INPUT TYPE="button" ID="txt_btn" VALUE="{{{BUTTON_TEXT}}}" class="btn btn-warning"><BR>
     <SMALL>{{{JOIN}}} <SMALL>  {{COPY}} </SMALL><BR>
     <IFRAME SRC="http://www.facebook.com/plugins/like.php?href=http://virtualkanban.net&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" SCROLLING="no" FRAMEBORDER="0" STYLE="border:none; overflow:hidden; width:450px; height:80px;" ALLOWTRANSPARENCY="true"></IFRAME></SMALL></P>
 </BODY>

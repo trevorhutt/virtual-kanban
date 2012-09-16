@@ -60,7 +60,7 @@ $(document).ready(function() {
 			WIP<br/><input onkeypress="javascript:save_edit_h(event)" class="input header_input_name" value="'+wip+'" /> \
 		</div>  \
 		<div class="small"> \
-			<div class="option save_header"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
+			<div class="option save_header"><button class="btn btn-success btn-mini"><i class="icon-white icon-ok">&nbsp;</i></button></div> \
 		</div> \
 		<div class="clear"></div> \
 		';
@@ -93,8 +93,8 @@ $(document).ready(function() {
 				  <div id="progress_bar'+id+'" class="pbar"></div> \
 				  <div class="small"> \
 					  <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
-					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
-					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
+					  <div n="'+id+'" class="option close itm_box_option"><button class="btn btn-danger btn-mini"><i class="icon-white icon-remove"></i></button></div> \
+					  <div n="'+id+'" class="option edit itm_box_option"><button class="btn btn-info btn-mini"><i class="icon-white icon-pencil"></i></button></div> \
 				  </div> \
 				  <div class="clear"></div> \
 			  </div> \
@@ -136,8 +136,8 @@ $(document).ready(function() {
 				  <div id="progress_bar'+id+'" class="pbar"></div> \
 				  <div class="small"> \
 				    <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
-					  <div n="'+id+'" class="option close itm_box_option"><img src="img/close.png" alt="Cerrar" title="Cerrar" /></div> \
-					  <div n="'+id+'" class="option edit itm_box_option"><img src="img/edit.png" alt="Editar" title="Editar" /></div> \
+					  <div n="'+id+'" class="option close itm_box_option"><button class="btn btn-danger btn-mini"><i class="icon-white icon-remove"></i></button></div> \
+					  <div n="'+id+'" class="option edit itm_box_option"><button class="btn btn-info btn-mini"><i class="icon-white icon-pencil"></i></button></div> \
 				  </div> \
 				  <div class="clear"></div> \
 				<div> \
@@ -173,7 +173,7 @@ $(document).ready(function() {
 				<div><span class="small">Responsible:</span><input onkeypress="javascript:save_edit(event)" id="resp_input'+id+'" class="input" value="'+box_itm_resp+'" /></div>  \
 				<div><span class="small">Progress:</span><input onkeypress="javascript:save_edit(event)" id="progress_input'+id+'" class="input" value="'+pbar_value+'" /></div>  \
 				<div class="small"> \
-					<div n="'+id+'" class="option save"><img src="img/save.png" alt="Guardar" title="Guardar" /></div> \
+					<div n="'+id+'" class="option save"><button class="btn btn-success btn-mini"><i class="icon-white icon-ok">&nbsp;</i></button></div> \
 				</div> \
 				<div class="clear"></div> \
 		';

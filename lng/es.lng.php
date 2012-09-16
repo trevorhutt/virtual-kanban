@@ -3,7 +3,7 @@ define ('TITLE','Tableros Kanban online y off-line en un solo fichero HTML!');
 
 #galleta
 define ('BLOG',        'Ver <a href="http://blog.virtualkanban.net/">el blog</a> para novedades');
-define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3b');
+define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3d');
 define ('VERSION_LINK','<a href="/022/">versión antigua</A>');
 define ('OTHER_TOOLS_LINK','');
 
