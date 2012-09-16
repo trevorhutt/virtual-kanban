@@ -5,12 +5,12 @@ function check_lang($lang = NULL){
   switch ($lang) {
     case 'en':
       require "lng/en.lng.php";
-      setcookie("virtualkanban", 'en');
+      @setcookie("virtualkanban", 'en');
       break;
       
     case 'es':
       require "lng/es.lng.php";
-      setcookie("virtualkanban", 'es');
+      @setcookie("virtualkanban", 'es');
       break; 
   
     default:
