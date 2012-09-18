@@ -3,9 +3,9 @@ define ('TITLE','Placas de Kanban on-line e off-line em um único arquivo HTML!'
 
 #galleta
 define ('BLOG',        'Ver <a href="http://blog.virtualkanban.net/">o blog</a> para novidades');
-define ('VERSION',     '<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3d');
+define ('VERSION',     '<img src="img/br.png" border=0/></a>&nbsp;<a href="?es"><img src="img/es.png" border=0/></a>&nbsp;<a href="?en"><img src="img/en.png" border=0/></a>&nbsp;ver. 0.3e');
 define ('VERSION_LINK','<a href="/022/">versão antiga</A>');
-define ('OTHER_TOOLS_LINK','');
+define ('OTHER_TOOLS_LINK','<small><a href="/html/other-kanban-tools.html">other kanban tools</A></small>');
 
 #buttons
 define ('BTN_ADD_TASK',  'NOVO CARTÃO');
