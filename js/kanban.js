@@ -90,7 +90,7 @@ $(document).ready(function() {
 				  <div id="name'+id+'" class="name">Item '+id+'</div> \
 				  <div class="dotted_hr"></div> \
 				  <div id="resp'+id+'" class="name">Resp '+id+'</div> \
-				  <div id="progress_bar'+id+'" class="pbar"></div> \
+				  <progress max="100" id="progress_bar'+id+'" class="pbar" value="0"></progress> \
 				  <div class="small"> \
 					  <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
 					  <div n="'+id+'" class="option close itm_box_option"><button class="btn btn-danger btn-mini"><i class="icon-white icon-remove"></i></button></div> \
@@ -103,10 +103,6 @@ $(document).ready(function() {
 		');
 		
 		$( "#box_itm"+id+" .itm_box_option input" ).mColorPicker();
-    
-		$( "#progress_bar"+id ).progressbar({
-			value: 0
-		});
 		$('.itm_box_option').hide();
 	});
 
@@ -133,7 +129,7 @@ $(document).ready(function() {
 				  <div id="name'+id+'" class="name">'+box_itm_name+'</div> \
 				  <div class="dotted_hr"></div> \
 				  <div id="resp'+id+'" class="name">'+box_itm_resp+'</div> \
-				  <div id="progress_bar'+id+'" class="pbar"></div> \
+				  <progress max="100" id="progress_bar'+id+'" class="pbar" value="'+pbar_value+'"></progress> \
 				  <div class="small"> \
 				    <div n="'+id+'" class="itm_box_option"><input n="'+id+'"  class="color colorete" type="color" data-text="hidden" data-colorlink="box_itm'+id+'" value="#f7941d"></div> \
 					  <div n="'+id+'" class="option close itm_box_option"><button class="btn btn-danger btn-mini"><i class="icon-white icon-remove"></i></button></div> \
@@ -144,9 +140,6 @@ $(document).ready(function() {
 		';
 		$('#box_itm'+id).html(box_itm_new_html);
 		$( "#box_itm"+id+" .itm_box_option input" ).mColorPicker();
-		$( "#progress_bar"+id ).progressbar({
-			value: pbar_value
-		});
 		
 		$('#box_itm'+id).live('mouseover',function(){
 		  $(this).children().children().children('.itm_box_option').show();
@@ -166,7 +159,7 @@ $(document).ready(function() {
 		var id = $(this).attr("n");
 		var box_itm_name=$('#name'+id).html();
 		var box_itm_resp=$('#resp'+id).html();
-		var pbar_value=parseInt($('#progress_bar'+id).progressbar( "value" ));
+		var pbar_value=parseInt($('#progress_bar'+id).prop('value'));
 		if (isNaN(pbar_value)){ var pbar_value=0;}
 		var box_itm_new_html=' \
 				<div><span class="small">Name of the task:</span><input onkeypress="javascript:save_edit(event)" id="name_input'+id+'" class="input" value="'+box_itm_name+'" /></div>  \
